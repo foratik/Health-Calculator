@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>محاسبه‌گر سلامت</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h2>محاسبه‌گر سلامت</h2>
+        <div class="image-container">
+            <img src="image.svg" alt="SVG Image" class="svg-image" />
+        </div>
+        <div class="inputs">
+            <div class="input-group">
+                <label for="weight">وزن (کیلوگرم):</label>
+                <input type="text" id="weight" placeholder="وزن را وارد کنید">
+            </div>
+
+            <div class="input-group">
+                <label for="height">قد (متر):</label>
+                <input type="text" id="height" placeholder="قد را وارد کنید">
+            </div>
+
+            <div class="input-group">
+                <label for="waist">دور کمر (سانتی‌متر):</label>
+                <input type="text" id="waist" placeholder="دور کمر را وارد کنید">
+            </div>
+
+            <div class="input-group">
+                <label for="age">سن:</label>
+                <input type="text" id="age" placeholder="سن را وارد کنید">
+            </div>
+
+            <div class="input-group">
+                <label for="gender">جنسیت:</label>
+                <select id="gender">
+                    <option value="1">مرد</option>
+                    <option value="0">زن</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="outputs">
+            <div class="output-group">
+                <label>شاخص توده بدنی (BMI):</label>
+                <formula id="bmi" data-formula="weight / (height * height)"></formula>
+            </div>
+
+            <div class="output-group">
+                <label>درصد چربی بدن (PBF):</label>
+                <formula id="pbf" data-formula="(1.2 * (weight / (height * height))) + (0.23 * age) - (10.8 * gender) - 5.4"></formula>
+            </div>
+
+            <div class="output-group">
+                <label>نسبت دور کمر به قد (WHtR):</label>
+                <formula id="whtr" data-formula="waist / (height * 100)"></formula>
+            </div>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
+
