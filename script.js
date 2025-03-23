@@ -45,5 +45,4 @@ document.addEventListener("DOMContentLoaded", () => {
         input.addEventListener("input", evaluateFormulas);
     });
 
-    evaluateFormulas();
 });
