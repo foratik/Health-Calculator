@@ -25,15 +25,8 @@ document.addEventListener("DOMContentLoaded", () => {
                     result = "ورودی نامعتبر";
                 } else {
                     const formulaString = formula.getAttribute("data-formula");
-
-                    const formulaWithValues = formulaString
-                        .replace(/weight/g, weight)
-                        .replace(/height/g, height)
-                        .replace(/waist/g, waist)
-                        .replace(/age/g, age)
-                        .replace(/gender/g, gender);
-
-                    result = eval(formulaWithValues).toFixed(2);
+                    const formulaFunc = new Function("weight", "height", "waist", "age", "gender", `return (${formulaString});`);
+                    result = formulaFunc(weight, height, waist, age, gender).toFixed(2);
                 }
 
                 formula.textContent = result;
